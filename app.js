@@ -22,5 +22,7 @@ app.all('/:subreddit', function(req, res){
 	});
 });
 
-app.listen(14042);
-console.log("redSMS listening on 14042");
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+console.log("Listening on " + port);
+});
