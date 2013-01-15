@@ -9,13 +9,11 @@ app.all('/:subreddit', function(req, res){
 		var titles = new Array();
 		var i = 0;
 		while (i<5){
-			
+				
 			titles[i] = i+": " + reddit_data[i].data.title;
 			i++
 		}
 		res.send(titles);
-		//console.log("Got it sending it out!");
-		//res.send(reddit_data[1].data.title);
 	});
 });
 
