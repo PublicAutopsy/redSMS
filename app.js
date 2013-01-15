@@ -11,13 +11,13 @@ app.all('/:subreddit', function(req, res){
   	}
 	restler.get("http://www.reddit.com/r/"+ req.params.subreddit + ".json").on('complete', function(reddit){
 		var reddit_data = reddit.data.children;
-		var titles = new Array();
+		var titles = "<Response>";
 		var i = 0;
 		while (i<5){
-				
-			titles[i] = i+": " + reddit_data[i].data.title;
+			titles += "<Sms>" + i + ": " + reddit_data[i].data.title + "</Sms>";
 			i++
 		}
+		titles += "</Response>"
 		res.send(titles);
 	});
 });
