@@ -17,5 +17,5 @@ app.all('/:subreddit', function(req, res){
 	});
 });
 
-app.listen(5000);
-console.log("redSMS listening on 5000");
+app.listen(14042);
+console.log("redSMS listening on 14042");
