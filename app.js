@@ -4,6 +4,11 @@ var express = require("express"),
 var app = express.createServer();
 
 app.all('/:subreddit', function(req, res){
+	if (req.url === '/favicon.ico') {
+    	res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+    	res.end();
+    	return;
+  	}
 	restler.get("http://www.reddit.com/r/"+ req.params.subreddit + ".json").on('complete', function(reddit){
 		var reddit_data = reddit.data.children;
 		var titles = new Array();
